@@ -16,7 +16,9 @@ func valid_int(arg1 int, arg3 int) string {
 }
 
 func calc(arg1 int, arg2 string, arg3 int) string {
-	fmt.Println(valid_int(arg1, arg3))
+	if valid_int(arg1, arg3) != "" {
+		goto Error
+	}
 	switch arg2 {
 	case "+":
 		return strconv.Itoa(arg1 + arg3)
@@ -29,6 +31,8 @@ func calc(arg1 int, arg2 string, arg3 int) string {
 	default:
 		return "Please type + - * / ."
 	}
+	Error:
+		return valid_int(arg1, arg3)
 }
 
 func main() {
