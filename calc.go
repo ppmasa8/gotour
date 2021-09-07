@@ -7,7 +7,7 @@ import (
 )
 
 func valid_int(arg1 int, arg3 int) string {
-	var err = "intでよろ"
+	var err = "Enter an integer in the first and third fields."
 	if reflect.TypeOf(arg1).Kind() != reflect.Int || reflect.TypeOf(arg3).Kind() != reflect.Int {
 		goto Warning
 	}
